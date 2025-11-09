@@ -20,7 +20,7 @@ def get_hourly_rate():
 # Function to get income tax rate
  
 def get_tax_rate():
-    return float(input("Enter income tax rate (e.g., 0.2 for 20%):"))
+    return float(input("Enter income tax rate as a decimal (.08 = 8%):"))
 
 # Function to calculate gross pay, income tax, and net pay
 
