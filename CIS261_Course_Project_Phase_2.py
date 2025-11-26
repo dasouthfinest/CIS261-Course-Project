@@ -1,9 +1,5 @@
 # O'Tria Fee
 # CIS261
-# Course_Project_Phase_2
-
-# O'Tria Fee
-# CIS261
 # Course Project Phase 2: Using Lists and Dictionaries to Store and Retrieve Data
 
 # Get employee name
