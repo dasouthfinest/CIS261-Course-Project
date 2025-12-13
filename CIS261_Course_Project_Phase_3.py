@@ -99,14 +99,14 @@ def display_totals(totals_dict):
     print("Total Net Pay:", f"${totals_dict['net']:.2f}")
 
 def main():
-    print("Employee Payroll System - Phase 3")
+    print("Employee Payroll System")
     print("Enter 'End' for employee name to finish")
 
     file = open("employees.txt", "a")
 
     while True:
         name = input("\nEnter employee name: ")
-        if name == "End":
+        if name.lower() == "end":
             break
 
         from_date, to_date = get_dates()
