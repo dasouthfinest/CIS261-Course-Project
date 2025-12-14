@@ -100,12 +100,11 @@ def display_totals(totals_dict):
 
 def main():
     print("Employee Payroll System")
-    print("Enter 'End' for employee name to finish")
-
+    
     file = open("employees.txt", "a")
 
     while True:
-        name = input("\nEnter employee name: ")
+        name = input("\nEnter employee name (or End to finish): ")
         if name.lower() == "end":
             break
 
@@ -114,7 +113,7 @@ def main():
         rate = get_input("Enter hourly rate: ", 0)
         tax_rate = get_input("Enter tax rate (0.0 - 1.0): ", 0, 1)
 
-        write_employee_to_file(file, from_date, to_date, name, hours, rate, tax_rate)
+        file.write(f"{from_date}|{to_date}|{name}|{hours}|{rate}|{tax_rate}\n")
 
     file.close()
 
