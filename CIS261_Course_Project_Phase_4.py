@@ -7,7 +7,8 @@
 from datetime import datetime
 
 ################################################################################
-class Login:
+
+class UserLogin:
     def __init__(self, username, password, role):
         self.username = username
         self.password = password
@@ -32,7 +33,7 @@ def CreateUsers():
         ########## Call GetUserRole and assign the return value to userrole
         userrole = GetUserRole()
 
-        login_obj = Login(username, userpwd, userrole)
+        login_obj = UserLogin(username, userpwd, userrole)
         UserDetail = login_obj.username + "|" + login_obj.password + "|" + login_obj.role + "\n"
         UserFile.write(UserDetail)
         print()
@@ -269,5 +270,17 @@ if __name__ == "__main__":
             # close file to save data
             EmpFile.close()
 
-        ########## Call the function that prints the employee information and totals
-        printinfo(DetailsPrinted)
+            #######Call the function that prints the employee information and totals
+            printinfo(DetailsPrinted)
+        
+        # ask if user wants to delete all data
+        
+    delete_choice = input("Do you want to delete all data files (Yes or No): ")
+       
+    if delete_choice.upper() == "YES":
+        open ("Users.txt", "w").close()
+        open ("Employees.txt", "w"). close()
+        print("All data files deleted.")
+        
+    else:
+        print("Data files kept.")
